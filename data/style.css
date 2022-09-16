@@ -1,0 +1,279 @@
+@font-face {
+  font-family: "Impact Label Reversed";
+  src: url("/fontwhite.ttf");
+  color: #000000;
+}
+* {
+  font-family: "Impact Label Reversed";
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+body {
+  background-color: rgb(32, 32, 32);
+  margin: 0px;
+  padding: 0px;
+}
+h1,
+h2,
+h3 {
+  color: #ffffff;
+  font-weight: 100;
+}
+h1 {
+  font-size: 55px;
+  margin: 0px;
+  color:rgb(194, 194, 194);
+  opacity: 1;
+  filter: drop-shadow(-2px -2px 2px rgba(255, 255, 255, 0.35));  
+}
+h2 {
+  font-size: 23px;
+  margin: 0px;
+  opacity: 0.25;
+}
+h3 {
+  text-align: center;
+  margin-top: 10px;
+}
+a {
+  font-size: 18px;
+  color: #777777;
+  opacity: 0.5;
+  filter: drop-shadow(0px 0px 20px #FFF);  
+}
+a:hover {
+  opacity: 1;
+}
+#hint {
+  font-size: 20px;
+  color: #777777;
+}
+input {
+  color: white;
+  background: none;
+  border-color: #77777766;
+  border-width: 2px;
+  border-radius: 3px;
+  padding: 3px 0 4px 0;
+  margin: 0px;
+  width: 100%;
+  /* caret-shape: underscore; */
+}
+#text-input {
+  outline: 10px inset #44444444;
+  border-radius: 1px;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  filter: drop-shadow(0px 0px 40px #FFF);  
+  caret-color: "white";
+}
+#text-input:focus {
+  background: #11111166;
+}
+
+#mode-dropdown {
+  outline: none;
+  border-color: rgb(0, 102, 255);
+  border-width: 1.5px;
+  /* border-radius: 3px; */
+  border-width: 0 1.5px 0 1.5px; border-style: dashed;
+  font-size: 21px;
+  background: black;
+  height: 36px;  
+  width: 100%;
+  text-align: center;
+}
+
+#single-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 15px;
+}
+
+input[type="button"] {
+  height: 36px;
+}
+
+input[type="button"]:disabled {
+  color: #333333;
+}
+
+
+#emoji-button{
+  color: rgb(255, 255, 255, 0.75);
+  border-color: rgb(255, 255, 255, 0.15);
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-width: 1.5px;
+}
+
+
+#clear-button{
+  color: rgb(255, 0, 0);
+  border-color: rgba(255, 0, 0, 0.55);
+}
+#clear-button:disabled{
+  color: rgba(255, 0, 0, 0.25);
+  border-color: rgba(255, 0, 0, 0.15);
+}
+
+#reel-button{
+  color: rgba(0, 151, 81, 1.0);
+  border-color: rgba(0, 151, 81, 0.25);
+}
+#reel-button:disabled{
+  color: rgba(0, 151, 81, 0.25);
+  border-color:rgba(0, 151, 81, 0.25);
+}
+
+#feed-button{
+  color: rgba(255, 166, 0, 1);
+  border-color: rgba(255, 166, 0, 0.25);
+}
+#feed-button:disabled{
+  color: rgba(255, 166, 0, 0.25);
+  border-color: rgba(255, 166, 0, 0.25);
+}
+
+#cut-button{
+  border-style: dashed;
+  color: rgba(0, 102, 255, 1);
+  border-color: rgba(0, 102, 255, 0.25)
+}
+#cut-button:disabled{
+  color: rgba(0, 102, 255, 0.25);
+  border-color: rgba(0, 102, 255, 0.25);
+}
+
+#submit-button{
+  color: rgb(255, 255, 255);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+#submit-button:disabled{
+  color: rgb(255, 255, 255);
+  border-color: rgba(128, 128, 128, 0.25);
+}
+
+
+#background {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  padding: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    rgb(0, 0, 0) 80%,
+    rgb(10, 10, 10)
+  );
+}
+
+#frame{  
+  border-radius: 20px;
+  filter: drop-shadow(-8px -8px 8px rgba(36, 36, 36, 0.5));
+  background: radial-gradient(
+    circle,
+    rgb(19, 19, 19) 10%,
+    rgb(8, 8, 8) 90%
+  );
+}
+
+#splash {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  padding: 0px;
+  margin: 0px;
+
+  background: radial-gradient(
+    ellipse,
+    rgb(20, 20, 20) 0%,
+    rgba(0, 0, 0, 1) 75%
+  );
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-animation: fade 2s;
+  animation: fade 2s;
+  opacity: 0;
+  z-index: -1;
+}
+
+#splashlogo {
+  width: 220px;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-start;
+
+  -webkit-animation: fade 1.5s;
+  animation: fade 1.5s;
+
+  opacity: 0;
+  z-index: -1;
+}
+
+#splashbar {
+  background-image: url("splash.png");
+  background-repeat: no-repeat;
+  background-position: left;
+
+  height: 150px;
+  -webkit-animation: move 1.5s;
+  animation: move 1.5s;
+}
+@keyframes move {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 0%;
+  }
+  80% {
+    width: 100%;
+  }
+}
+
+@keyframes fade {
+  0% {
+    z-index: 999;
+    opacity: 1;
+  }
+  75% {
+    z-index: 999;
+    opacity: 1;
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+}
