@@ -719,7 +719,7 @@ void setup() {
   Serial.begin(115200);
 
   pinMode(sensorPin, INPUT_PULLUP);
-  Serial.println("firmware begin"); getSensorPin();
+  Serial.println("firmware begin");
 
 
   while (sensorState > threshold) {
