@@ -714,34 +714,26 @@ void setup() {
   Serial.println("firmware begin");
 
   pinMode(wifiResetPin, INPUT_PULLDOWN);
-//  pinMode(ledChar, OUTPUT);
-//  pinMode(ledFinish, OUTPUT);
-  //  pinMode(enableCharStepper, OUTPUT);
-
-//  analogWrite(ledChar, 0);
-//  analogWrite(ledFinish, 0);
-
-  //  digitalWrite(enableCharStepper, HIGH);
 
   stepperFeed.setSpeed(300);
-//  stepperFeed.step(1000);
-//  stepperFeed.step(-1000);
-
-  stepperChar.setMaxSpeed(300 * MICROSTEP_Char);
-  stepperChar.setAcceleration(10000 * MICROSTEP_Char);
-
-  stepsPerChar = (float)stepsPerRevolutionChar / charQuantity;
-
-  displayInitialize();
-  displayClear();
-  displaySplash();
-
-  wifiManager();
-  delay(500); // time for the task to start
 
   myServo.attach(servoPin);
   myServo.write(restAngle);
   delay(500);
+
+  bool strong = false;
+  int delayFactor = strong ? 2 : 1;
+  int peakAngle = strong ? strongAngle : lightAngle;
+
+  for (int pos = restAngle; pos > peakAngle; pos--) {
+    myServo.write(pos);
+    delay(delayFactor);
+  }
+  myServo.write(peakAngle);
+  delay(50);
+
+  
+  return;
 
   Serial.println("begin home");
   setHome();
